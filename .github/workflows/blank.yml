@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Devine la réponse</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f2fef2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: #2e5939;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #3a7f5b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2e5939;
+    }
+    .message {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #333;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Qu'est-ce qui est mignon, vert, que j'aime et qui flotte dans l'eau&nbsp;?</h2>
+    <input type="text" id="answer" placeholder="Écris ta réponse ici...">
+    <br>
+    <button onclick="checkAnswer()">Valider</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim().toLowerCase();
+      const message = document.getElementById("message");
+      if (input === "une algue" || input === "algue") {
+        message.innerText = `Mon amour,
+
+Je sais que ces derniers temps n’ont pas été faciles pour nous. Il y a eu des mots, des problèmes et un déclin de ma part… et je le ressens autant que toi. Mais malgré tout ça, une chose ne change pas : c’est ce que je ressens pour toi.
+
+Tu comptes énormément pour moi. Même quand on se dispute, même quand on ne se comprend pas, mon cœur reste tourné vers toi. J’aimerais qu’on retrouve nos rêves, ces liens unique qu’on a construit. Je ne veux pas te perdre pour mes erreurs, tu es représente énormément pour moi.
+
+Je suis sincèrement prêt à faire des efforts, à t’écouter davantage, à comprendre ce que tu ressens vraiment. Parce que tu mérites d’être aimée comme il faut, avec douceur, patience et respect. Et je veux être celui qui t’aime ainsi.
+
+Je t’aime, même dans les tempêtes. Et j’espère qu’on pourra retrouver ensemble un peu de soleil et de bonheur.`;
+      } else {
+        message.innerText = "Réponse incorrecte 😢";
+      }
+    }
+  </script>
+</body>
+</html>
