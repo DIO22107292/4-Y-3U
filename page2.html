@@ -10,6 +10,7 @@
       background-color: #fff0f0;
       font-family: "Segoe UI", sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       position: relative;
@@ -35,13 +36,57 @@
       padding: 20px;
       text-shadow: 2px 2px 5px #ffffff;
     }
+
+    .buttons {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background-color: white;
+      border: 2px solid #cc0000;
+      border-radius: 8px;
+      color: #cc0000;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ffe5e5;
+    }
+
+    .heart-icon {
+      width: 24px;
+      height: 24px;
+    }
   </style>
 </head>
 <body>
   <img src="b0f032b2-27ae-46fa-95de-864bbfe274b6.png" alt="coeur" class="heart-background">
+
   <div class="message">
     1 an entre toi et moi,<br>
     sauras-tu t’en souvenir ?
+  </div>
+
+  <div class="buttons">
+    <button class="button">
+      Oui
+      <img src="heart-icon.png" alt="❤️" class="heart-icon">
+    </button>
+    <button class="button">
+      Non
+      <img src="heart-icon.png" alt="❤️" class="heart-icon">
+    </button>
   </div>
 </body>
 </html>
