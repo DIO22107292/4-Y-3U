@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Résultat final</title>
+  <style>
+    body {
+      background-color: #fff0f0;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 26px;
+      color: #cc0000;
+      margin-bottom: 20px;
+    }
+
+    #score {
+      font-size: 22px;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .gift-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Résultat final 💌</h1>
+  <div id="score">Tu as obtenu un score de : 0</div>
+
+  <div id="gifts"></div>
+
+  <script>
+    const score = parseInt(localStorage.getItem("score") || "0");
+    document.getElementById("score").innerText = "Tu as obtenu un score de : " + score + " / 4";
+
+    const giftContainer = document.getElementById("gifts");
+
+    const button = document.createElement("button");
+    button.className = "gift-button";
+    button.innerText = "Cadeau 🎁";
+
+    for (let i = 0; i < Math.min(score, 3); i++) {
+      const gift = button.cloneNode(true);
+      gift.onclick = () => alert("🎁 Cadeau " + (i + 1) + " à découvrir !");
+      giftContainer.appendChild(gift);
+    }
+  </script>
+</body>
+</html>
