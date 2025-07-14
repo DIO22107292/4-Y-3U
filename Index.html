@@ -8,7 +8,7 @@
       margin: 0;
       padding: 0;
       font-family: "Segoe UI", sans-serif;
-      background: f2fef2;
+      background: #f2fef2;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,13 +16,16 @@
       text-align: center;
       color: #2e5939;
     }
+
     .container {
       background: white;
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       max-width: 600px;
+      position: relative;
     }
+
     input[type="text"] {
       padding: 10px;
       font-size: 16px;
@@ -31,6 +34,7 @@
       border: 1px solid #ccc;
       border-radius: 6px;
     }
+
     button {
       margin-top: 15px;
       padding: 10px 20px;
@@ -40,14 +44,28 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #2e5939;
     }
+
     .message {
       margin-top: 30px;
       font-size: 16px;
       color: #333;
       white-space: pre-wrap;
+    }
+
+    #heart-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 36px;
+      display: none;
+      cursor: pointer;
+      color: red;
     }
   </style>
 </head>
@@ -60,22 +78,29 @@
     <div class="message" id="message"></div>
   </div>
 
+  <!-- Bouton cœur -->
+  <button id="heart-button" onclick="window.location.href='page2.html'">❤️</button>
+
   <script>
     function checkAnswer() {
       const input = document.getElementById("answer").value.trim().toLowerCase();
       const message = document.getElementById("message");
+      const heartButton = document.getElementById("heart-button");
+
       if (input === "une algue" || input === "algue") {
         message.innerText = `Mon amour,
 
 Je sais que ces derniers temps n’ont pas été faciles pour nous. Il y a eu des mots, des problèmes et un déclin de ma part… et je le ressens autant que toi. Mais malgré tout ça, une chose ne change pas : c’est ce que je ressens pour toi.
 
-Tu comptes énormément pour moi. Même quand on se dispute, même quand on ne se comprend pas, mon cœur reste tourné vers toi. J’aimerais qu’on retrouve nos rêves, ces liens unique qu’on a construit. Je ne veux pas te perdre pour mes erreurs, tu es représente énormément pour moi.
+Tu comptes énormément pour moi. Même quand on se dispute, même quand on ne se comprend pas, mon cœur reste tourné vers toi. J’aimerais qu’on retrouve nos rêves, ces liens uniques qu’on a construits. Je ne veux pas te perdre pour mes erreurs, tu représentes énormément pour moi.
 
 Je suis sincèrement prêt à faire des efforts, à t’écouter davantage, à comprendre ce que tu ressens vraiment. Parce que tu mérites d’être aimée comme il faut, avec douceur, patience et respect. Et je veux être celui qui t’aime ainsi.
 
 Je t’aime, même dans les tempêtes. Et j’espère qu’on pourra retrouver ensemble un peu de soleil et de bonheur.`;
+        heartButton.style.display = "block";
       } else {
         message.innerText = "Réponse incorrecte 😢";
+        heartButton.style.display = "none";
       }
     }
   </script>
