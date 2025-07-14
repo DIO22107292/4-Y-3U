@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 3</title>
+  <style>
+    body {
+      background-color: #fff0f0;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      color: #cc0000;
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    .question {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      font-size: 18px;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Troisième question</h1>
+  <div class="question">Depuis combien de temps sommes-nous ensemble ?</div>
+
+  <input type="text" id="answer" placeholder="Ta réponse ici">
+  <br>
+  <button onclick="checkAnswer()">Valider</button>
+
+  <div id="result" class="result"></div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim().toLowerCase();
+      const result = document.getElementById("result");
+
+      if (input === "1 an" || input === "un an") {
+        result.style.color = "green";
+        result.textContent = "Bonne réponse 😍";
+
+        let score = parseInt(localStorage.getItem("score") || "0");
+        localStorage.setItem("score", score + 1);
+
+        setTimeout(() => {
+          window.location.href = "page6.html";
+        }, 1500);
+      } else {
+        result.style.color = "#cc0000";
+        result.textContent = "Mauvaise réponse 😖";
+      }
+    }
+  </script>
+</body>
+</html>
