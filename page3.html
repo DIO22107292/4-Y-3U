@@ -5,7 +5,6 @@
   <title>Question 1</title>
   <style>
     body {
-      margin: 0;
       background-color: #fff0f0;
       font-family: "Segoe UI", sans-serif;
       display: flex;
@@ -14,60 +13,43 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
-      padding: 20px;
     }
 
     h1 {
       color: #cc0000;
-      font-size: 28px;
+      font-size: 24px;
       margin-bottom: 40px;
     }
 
     .question {
-      font-size: 22px;
+      font-size: 20px;
       margin-bottom: 20px;
-      font-weight: bold;
-      color: #333;
     }
 
-    input[type="text"] {
-      padding: 10px;
+    input, button {
       font-size: 18px;
-      border-radius: 6px;
-      border: 2px solid #cc0000;
-      outline: none;
-      width: 250px;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
     }
 
     button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 18px;
       background-color: #cc0000;
       color: white;
       border: none;
-      border-radius: 6px;
       cursor: pointer;
     }
 
-    button:hover {
-      background-color: #e60000;
-    }
-
     .result {
-      margin-top: 25px;
-      font-size: 20px;
+      margin-top: 20px;
+      font-size: 18px;
       font-weight: bold;
-      color: #cc0000;
     }
   </style>
 </head>
 <body>
   <h1>Ton nombre de bonnes réponses influera sur le cadeau que tu auras 😘</h1>
-
-  <div class="question">
-    Première question : Où est-ce qu'on s'est fait un câlin pour la première fois ?
-  </div>
+  <div class="question">Première question : Où est-ce qu'on s'est fait un câlin pour la première fois ?</div>
 
   <input type="text" id="answer" placeholder="Ta réponse ici">
   <br>
@@ -83,8 +65,15 @@
       if (input === "la gare") {
         result.style.color = "green";
         result.textContent = "Bonne réponse 😍";
-        // Tu peux rediriger vers une autre page ici si tu veux
-        // setTimeout(() => { window.location.href = "page4.html"; }, 2000);
+
+        // Ajouter +1 au score dans localStorage
+        let score = parseInt(localStorage.getItem("score") || "0");
+        localStorage.setItem("score", score + 1);
+
+        // Aller à la question suivante
+        setTimeout(() => {
+          window.location.href = "page4.html";
+        }, 1500);
       } else {
         result.style.color = "#cc0000";
         result.textContent = "Mauvaise réponse 😖";
