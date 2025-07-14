@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 1</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #fff0f0;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #cc0000;
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .question {
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 6px;
+      border: 2px solid #cc0000;
+      outline: none;
+      width: 250px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e60000;
+    }
+
+    .result {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ton nombre de bonnes réponses influera sur le cadeau que tu auras 😘</h1>
+
+  <div class="question">
+    Première question : Où est-ce qu'on s'est fait un câlin pour la première fois ?
+  </div>
+
+  <input type="text" id="answer" placeholder="Ta réponse ici">
+  <br>
+  <button onclick="checkAnswer()">Valider</button>
+
+  <div id="result" class="result"></div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim().toLowerCase();
+      const result = document.getElementById("result");
+
+      if (input === "la gare") {
+        result.style.color = "green";
+        result.textContent = "Bonne réponse 😍";
+        // Tu peux rediriger vers une autre page ici si tu veux
+        // setTimeout(() => { window.location.href = "page4.html"; }, 2000);
+      } else {
+        result.style.color = "#cc0000";
+        result.textContent = "Mauvaise réponse 😖";
+      }
+    }
+  </script>
+</body>
+</html>
