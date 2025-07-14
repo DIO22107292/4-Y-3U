@@ -68,9 +68,18 @@
       width: 24px;
       height: 24px;
     }
+
+    .response-message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #cc0000;
+      font-weight: bold;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
+  <img src="b0f032b2-27ae-46fa-95de-864bbfe274b6.png" alt="coeur" class="heart-background">
 
   <div class="message">
     1 an entre toi et moi,<br>
@@ -78,12 +87,26 @@
   </div>
 
   <div class="buttons">
-    <button class="button">
+    <button class="button" onclick="goToPage3()">
       Oui
+      <img src="heart-icon.png" alt="❤️" class="heart-icon">
     </button>
-    <button class="button">
+    <button class="button" onclick="showMessage()">
       Non
+      <img src="heart-icon.png" alt="❤️" class="heart-icon">
     </button>
   </div>
+
+  <div class="response-message" id="response"></div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("response").innerText = "Tu es obligée.";
+    }
+
+    function goToPage3() {
+      window.location.href = "page3.html";
+    }
+  </script>
 </body>
 </html>
