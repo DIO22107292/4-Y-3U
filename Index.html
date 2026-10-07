@@ -1,108 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Devine la réponse</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #f2fef2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      color: #2e5939;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quel jour sommes-nous ?</title>
 
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      position: relative;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    input[type="text"] {
-      padding: 10px;
-      font-size: 16px;
-      width: 80%;
-      margin-top: 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fafafa;
+            font-family: Arial, sans-serif;
+            color: #111;
+        }
 
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #3a7f5b;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+        .container {
+            text-align: center;
+        }
 
-    button:hover {
-      background-color: #2e5939;
-    }
+        .accent {
+            width: 45px;
+            height: 4px;
+            background-color: #e00000;
+            margin: 0 auto 25px;
+        }
 
-    .message {
-      margin-top: 30px;
-      font-size: 16px;
-      color: #333;
-      white-space: pre-wrap;
-    }
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
 
-    #heart-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: none;
-      border: none;
-      font-size: 36px;
-      display: none;
-      cursor: pointer;
-      color: red;
-    }
-  </style>
+        input {
+            width: 280px;
+            padding: 15px 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 17px;
+            text-align: center;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #e00000;
+            box-shadow: 0 0 0 2px rgba(224, 0, 0, 0.1);
+        }
+
+        button {
+            display: block;
+            margin: 18px auto 0;
+            padding: 13px 30px;
+            background-color: #e00000;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b80000;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <h2>Qu'est-ce qui est mignon, vert, que j'aime et qui flotte dans l'eau&nbsp;?</h2>
-    <input type="text" id="answer" placeholder="Écris ta réponse ici...">
-    <br>
-    <button onclick="checkAnswer()">Valider</button>
-    <div class="message" id="message"></div>
-  </div>
 
-  <!-- Bouton cœur -->
-  <button id="heart-button" onclick="window.location.href='page2.html'">❤️</button>
+    <main class="container">
+        <div class="accent"></div>
 
-  <script>
-    function checkAnswer() {
-      const input = document.getElementById("answer").value.trim().toLowerCase();
-      const message = document.getElementById("message");
-      const heartButton = document.getElementById("heart-button");
+        <h1>Quel jour sommes-nous ?</h1>
 
-      if (input === "une algue" || input === "algue") {
-        message.innerText = `Mon amour,
+        <input 
+            type="text" 
+            placeholder="Ex. Lundi"
+            aria-label="Quel jour sommes-nous ?"
+        >
 
-Je sais que ces derniers temps n’ont pas été faciles pour nous. Il y a eu des mots, des problèmes et un déclin de ma part… et je le ressens autant que toi. Mais malgré tout ça, une chose ne change pas : c’est ce que je ressens pour toi.
+        <button>Continuer</button>
+    </main>
 
-Tu comptes énormément pour moi. Même quand on se dispute, même quand on ne se comprend pas, mon cœur reste tourné vers toi. J’aimerais qu’on retrouve nos rêves, ces liens uniques qu’on a construits. Je ne veux pas te perdre pour mes erreurs, tu représentes énormément pour moi.
-
-Je suis sincèrement prêt à faire des efforts, à t’écouter davantage, à comprendre ce que tu ressens vraiment. Parce que tu mérites d’être aimée comme il faut, avec douceur, patience et respect. Et je veux être celui qui t’aime ainsi.
-
-Je t’aime, même dans les tempêtes. Et j’espère qu’on pourra retrouver ensemble un peu de soleil et de bonheur.`;
-        heartButton.style.display = "block";
-      } else {
-        message.innerText = "Réponse incorrecte 😢";
-        heartButton.style.display = "none";
-      }
-    }
-  </script>
 </body>
 </html>
+:::
